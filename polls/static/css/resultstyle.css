@@ -1,0 +1,24 @@
+div.result_body {
+    padding-left:15%;
+}
+
+div.item_head{
+    font-family: "Times New Roman", Times, serif;
+    font-size: 25px;
+    text-decoration: underline;
+}
+
+div.item_body{
+    font-size: 14px;
+}
+
+#floatMenu {
+    position:absolute;
+    top:150px;
+    left:50%;
+    margin-left:235px;
+    width:200px;
+}
+
+
+

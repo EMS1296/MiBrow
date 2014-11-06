@@ -1,0 +1,37 @@
+{% load staticfiles %}
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="{% static "css/mainstyle.css" %}" >
+<title>MiBrow</title>
+</head>
+
+<body>
+<div class="search">
+<img src="{% static "images/MiBrow.jpg" %}"  alt="Logo"/>
+<div class="text">
+
+
+<form method="POST" class="searchform" action="/search/test/">
+	{% csrf_token %}
+	<input type="text" name="fname" id="input" value="{{ test_value }}" >
+	<input type="submit" value="Submit"> &nbsp;
+	<select name="database">
+		<option value="worms">Database1</option>
+		<option value="human1">Database2</option>
+		<option value="humane2">Database3</option>
+	</select>
+	<input type="submit" value="Upload Sequence">
+</form>
+</div>
+</div>
+{% if latest_question_list %}
+	<ul>
+	{% for question in latest_question_list %}
+		<li><a href="/polls/{{ question.id }}/">{{ question.question_text }}</a><li>
+	{% endfor %}
+	</ul>
+{% else %}
+	<!-- This is a comment just to show that logic is possible in templates -->
+	</body>
+	</html>
+{% endif %}
